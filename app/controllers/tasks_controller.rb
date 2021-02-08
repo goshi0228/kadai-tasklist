@@ -12,7 +12,7 @@ class TasksController < ApplicationController
   end
 
   def create
-    @task = Task.new(message_params)
+    @task = Task.new(task_params)
     if @task.save
       flash[:success] = 'タスクが正常に作成されました'
       redirect_to @task
@@ -47,7 +47,6 @@ class TasksController < ApplicationController
   end
 end
 
-private
- def task_params
-    params.require(:task).permit(:content)
- end
+def task_params
+  params.require(:task).permit(:content)
+end
