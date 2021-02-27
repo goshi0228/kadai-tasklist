@@ -11,7 +11,7 @@
     <tbody>
       <% @tasks.each do |task| %>
         <tr>
-          <td><%= link_to task.id, task %></td>
+          <td><%= link_to task.id , task%></td>
           <td><%= task.status %></td>
           <td><%= task.content %></td>
         </tr>
@@ -24,3 +24,4 @@
 <% end %>
 
 <%= link_to '新規タスクの投稿', new_task_path, class: "btn btn-primary" %>
+
